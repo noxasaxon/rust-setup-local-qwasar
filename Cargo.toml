@@ -1,0 +1,33 @@
+[package]
+name = "rust-setup-local-qwasar"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "qwasar"
+path = "src/main.rs"
+
+[lib]
+name = "qwasar_setup"
+path = "src/lib.rs"
+
+
+# https://github.com/yaahc/color-eyre#improving-perf-on-debug-builds
+[profile.dev.package.backtrace]
+opt-level = 3 
+
+[dependencies]
+assert_fs = "1.0.3"
+color-eyre = "0.5.11"
+directories = "4.0.1"
+edit = "0.1.3"
+predicates = "2.0.2"
+rprompt = "1.0.5"
+slug = "0.1.4"
+structopt = "0.3.22"
+cargo_toml = "0.10"
+
+[dev-dependencies]
+assert_cmd = "2.0.0"
